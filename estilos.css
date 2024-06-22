@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 50px 2000px 50px;
+  grid-template-rows: 50px 2400px 60px;
   grid-template-areas: "cabecera" "medio" "fin";
   row-gap: 5%;
 }
@@ -21,8 +21,8 @@
   margin-top: 5%;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 35% 25% 25%;
-  grid-template-areas: "carrucel carrucel" "productos productos" "flyer  flyerr";
+  grid-template-rows: 25% 20% 20% 20%;
+  grid-template-areas: "carrucel carrucel" "productos productos" "flyer  flyerr" "USA USA";
   row-gap: 6%;
 }
 .grid-container main .carousel {
@@ -107,7 +107,6 @@
 .player a {
   text-decoration: none;
   color: black;
-  width: auto;
   height: 100%;
   width: 100%;
   text-align: center;
@@ -123,6 +122,40 @@
   width: 80%;
   height: 100%;
   border-radius: 15px;
+}
+
+.USA {
+  grid-area: USA;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+.USA .avion {
+  width: 200px;
+  right: 100%;
+  position: absolute;
+}
+.USA .bandera {
+  width: 320px;
+  height: 200px;
+}
+.USA .mundo {
+  text-align: center;
+  animation: rotar 10s infinite linear;
+}
+
+@keyframes rotar {
+  0% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+.USA:hover .avion {
+  z-index: 1;
+  transition-duration: 4s;
+  transform: translateX(800%);
+  animation-iteration-count: infinite;
 }
 
 .paginaIphone {
@@ -173,6 +206,7 @@
   padding-top: 1%;
   width: 25%;
   height: 45%;
+  padding-top: 5%;
   margin: 1%;
 }
 .cards .card .stock {
@@ -192,6 +226,7 @@
 .cards .card-img-top {
   text-align: center;
   width: 55%;
+  height: 65%;
 }
 
 .unidad {
@@ -326,33 +361,54 @@
 /* mediaQuery */
 @media (max-width: 700px) {
   .grid-container {
-    grid-template-rows: 50px 3400px 50px;
+    grid-template-rows: 50px 4000px 50px;
   }
   .logo {
     width: 60% !important;
   }
   main {
     grid-template-columns: 100% !important;
-    grid-template-rows: 20% 50% 12% 10% !important;
-    grid-template-areas: "carrucel" "productos" "flyer" "flyerr" !important;
+    grid-template-rows: 15% 40% 12% 10% 15% !important;
+    grid-template-areas: "carrucel" "productos" "flyer" "flyerr" "USA" !important;
     row-gap: 1% !important;
+  }
+  .USA {
+    flex-direction: column !important;
+    width: auto !important;
+    text-align: center;
+  }
+  .USA .avion {
+    display: none;
+  }
+  .USA .mundo {
+    display: block;
+    justify-content: start !important;
+    width: 40%;
+    margin-bottom: 10%;
   }
   .carousel-item img {
     margin: 200px auto !important;
     height: 200px !important;
   }
   .players {
-    flex-direction: column !important;
+    flex-direction: column;
   }
   .players .player {
     padding-top: 5%;
     width: 50%;
   }
   .players img {
-    height: 70% !important;
+    height: 70%;
+  }
+  .players a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
   }
   .PagIphone {
-    grid-template-rows: 50px 4000px 50px;
+    grid-template-rows: 50px 3200px 50px;
   }
   .cards {
     flex-direction: column !important;
