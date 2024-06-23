@@ -133,6 +133,7 @@
   text-align: center;
 }
 .USA .avion {
+  transition-duration: 4s;
   width: 200px;
   right: 100%;
   position: absolute;
@@ -234,10 +235,11 @@
 }
 
 .promocionProduc {
-  background-color: #fafafa;
+  background-color: rgba(1, 42, 107, 0.9882352941);
   display: flex;
   justify-content: space-around;
   text-align: center;
+  color: #fafafa;
   width: 100%;
   height: 15%;
   font-size: 20px;
@@ -245,7 +247,7 @@
   align-items: start;
 }
 .promocionProduc span {
-  color: rgba(1, 42, 107, 0.9882352941);
+  color: rgb(102, 164, 226);
 }
 
 .producto {
@@ -272,11 +274,25 @@
   border-radius: 50px;
   width: 90%;
   margin-left: 3%;
-  background-color: rgba(1, 42, 107, 0.9882352941);
+  background-color: whitesmoke;
+}
+.producto .fotoProduc .fondoMac {
+  background-color: white !important;
 }
 .producto .fotoProduc img {
-  width: 40% !important;
+  width: 100% !important;
   height: 65% !important;
+}
+.producto .fotoProduc img .telefono {
+  margin-right: 500px !important;
+  width: 300px !important;
+}
+.producto .fotoProduc .flecha img {
+  width: 25px !important;
+  height: 30px !important;
+}
+.producto .carousel-indicators button {
+  background-color: black;
 }
 .producto .seleccion {
   text-align: center;
@@ -357,14 +373,24 @@
 .producto .contenido-caja .cable {
   width: 10%;
 }
+.producto .contenido-caja .chip {
+  width: 15% !important;
+  height: 15% !important;
+}
+.producto .contenido-caja ul, .producto .contenido-caja li {
+  list-style: none;
+}
 
 /* mediaQuery */
 @media (max-width: 700px) {
+  .navbar-toggler {
+    border: none !important;
+  }
   .grid-container {
     grid-template-rows: 50px 4000px 50px;
   }
   .logo {
-    width: 60% !important;
+    width: 100% !important;
   }
   main {
     grid-template-columns: 100% !important;
@@ -388,18 +414,21 @@
     margin-top: 10%;
   }
   .carousel-item img {
-    margin: 200px auto !important;
     height: 200px !important;
+    width: 80% !important;
   }
   .players {
     flex-direction: column;
   }
   .players .player {
     padding-top: 5%;
-    width: 50%;
+    width: 90%;
+    margin-top: 5px;
+    border: 1px solid #fafafa;
   }
   .players img {
-    height: 70%;
+    height: 65%;
+    width: 50%;
   }
   .players a {
     display: flex;
@@ -407,6 +436,16 @@
     align-items: center;
     height: 100%;
     width: 100%;
+  }
+  .macbook-flyer {
+    width: 100% !important;
+  }
+  .flyer h1 {
+    font-size: 40px;
+    font-weight: 400;
+  }
+  .flyer img {
+    width: 95% !important;
   }
   .PagIphone {
     grid-template-rows: 50px 3200px 50px;
@@ -439,7 +478,7 @@
     font-size: 15px !important;
   }
   .promocionProduc {
-    height: 100px !important;
+    height: 50px !important;
     align-items: center;
   }
   .promocionProduc .entregas {
@@ -459,29 +498,26 @@
     grid-template-areas: "titulo" "foto " "seleccion" "caract " !important;
   }
   .fotoProduc {
-    height: 50%;
+    margin-left: 4%;
   }
   .fotoProduc .carousel-item {
-    height: 600px !important;
+    height: 500px !important;
+    width: 100% !important;
   }
   .fotoProduc .carousel-item img {
-    align-items: center;
-    text-align: center;
-    margin-right: 10% !important;
-    margin-top: 50% !important;
-    width: 70% !important;
-    height: 300px !important;
+    margin-top: 20% !important;
+    margin-left: -5% !important;
+    width: 350px !important;
+    height: 70% !important;
   }
   .unidad {
     display: grid;
     grid-template-columns: 100% !important;
     grid-template-rows: 5% 70% !important;
   }
-  .unidad .promocionProduc {
-    height: 90px;
-  }
   .unidad .promocionProduc p {
-    font-size: 15px !important;
+    margin-top: 10%;
+    font-size: 10px !important;
   }
   .row {
     display: flex;
@@ -507,6 +543,9 @@
   }
   .contenido-caja .cable {
     width: 30% !important;
+  }
+  .comparacion {
+    height: 70% !important;
   }
   .seleccion img {
     width: 8% !important;

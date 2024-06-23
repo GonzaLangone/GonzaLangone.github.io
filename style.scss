@@ -146,6 +146,7 @@ $font-titulo:Georgia, 'Times New Roman', Times, serif;;
     justify-content: space-around;
     text-align: center;
     .avion{
+    transition-duration: 4s;
     width: 200px;
     right:100%;
     position: absolute;
@@ -260,20 +261,22 @@ $font-titulo:Georgia, 'Times New Roman', Times, serif;;
 
 // pagina Prod individual
 .unidad{
+    // background-color: $color-fondo-basic;
     row-gap: 1px !important;
 }
 .promocionProduc{
-    background-color: $color-fondo-basic;
+    background-color: $color-fondo-logo;
     display: flex;
     justify-content: space-around;
     text-align: center;
+    color: $color-fondo-basic;
     width: 100%;
     height: 15%;
     font-size: 20px;
     font-weight: 200;
     align-items: start;
     span{
-        color: $color-fondo-logo;
+        color: rgb(102, 164, 226);
     }
 }
 .producto{
@@ -298,16 +301,35 @@ $font-titulo:Georgia, 'Times New Roman', Times, serif;;
     }
     .fotoProduc{
         grid-area: foto;
+        // .carousel{ border: 1px solid $color-fondo-logo;}
         .carousel-item, .carousel, .carousel-inner{
             border-radius: 50px;
             width: 90%;
             margin-left: 3%;
-            background-color: $color-fondo-logo;
+            background-color: whitesmoke;
+        }
+        .fondoMac{
+            background-color: white !important;
+        }
+        img{
+        width: 100% !important; 
+        height: 65% !important;
+        .telefono{
+            margin-right: 500px !important;
+            width: 300px !important;
+        }}
+        .flecha{
+            img{width: 25px !important;
+            height: 30px !important;}
             
         }
-        img{width: 40% !important; 
-        height: 65% !important;}
+  
     }
+.carousel-indicators{
+    button{
+        background-color: black;
+    }
+}
     .seleccion{
         text-align: center;
         grid-area: seleccion;
@@ -343,7 +365,6 @@ $font-titulo:Georgia, 'Times New Roman', Times, serif;;
                 
             }
             p{
-                
                 color: black;
                 width: 100px;
                 height: 100%;
@@ -351,7 +372,6 @@ $font-titulo:Georgia, 'Times New Roman', Times, serif;;
                 border-radius: 10px;
                 border: 1px solid black;
             }
-
         }
             .reservar{
             margin-top: 5%;
@@ -390,7 +410,17 @@ $font-titulo:Georgia, 'Times New Roman', Times, serif;;
         .cable{
             width: 10%;
         }
+        .chip{
+            width: 15%  !important;
+            height: 15% !important;
+        }
+        ul, li{
+           list-style: none;
+        }
     }
+
+
+
 }
 
 
@@ -399,11 +429,14 @@ $font-titulo:Georgia, 'Times New Roman', Times, serif;;
 
 /* mediaQuery */
 @media  (max-width:700px){
+    .navbar-toggler{
+        border: none !important;
+    }
     .grid-container{
         grid-template-rows: 50px 4000px 50px;
     }
     .logo{
-        width: 60% !important;
+        width: 100% !important;
     }
     main {
         
@@ -436,18 +469,25 @@ $font-titulo:Georgia, 'Times New Roman', Times, serif;;
     }
     .carousel-item{
         img{
-            margin: 200px auto !important;
+            // margin: 200px auto !important;
             height:200px !important;
+            width: 80% !important;
+
+
+
         }
     }
     .players{
         flex-direction: column;
         .player{
             padding-top: 5%;
-            width: 50%;
+            width: 90%;
+            margin-top: 5px;
+            border: 1px solid $color-fondo-basic;
         }
         img{
-            height: 70%;
+            height: 65%;
+            width: 50%;
         }
             
         a{
@@ -459,7 +499,19 @@ $font-titulo:Georgia, 'Times New Roman', Times, serif;;
                 }
         
     }
-
+    // flyer index 
+   .macbook-flyer{
+    width: 100% !important;
+   }
+   .flyer{
+    h1{
+        font-size: 40px;
+        font-weight: 400;
+    }
+    img{
+        width: 95% !important;
+    }
+   }
 
     // Pagina Iphones ---------------
 
@@ -502,7 +554,7 @@ $font-titulo:Georgia, 'Times New Roman', Times, serif;;
 
         // pagina Unidad ---------------
         .promocionProduc{
-            height: 100px !important;
+            height: 50px !important;
             align-items: center;
             .entregas{margin-left: 3%;}
             .seguridad{margin-right: 3%;}
@@ -524,28 +576,28 @@ $font-titulo:Georgia, 'Times New Roman', Times, serif;;
             !important;
         }
         .fotoProduc{
-            height: 50%;
+            margin-left: 4%;
             .carousel-item{
-                height: 600px !important;
+                height: 500px !important;
+                width: 100% !important;
                 // imagen de el iphone principal
                 img{ 
-                    align-items: center;
-                    text-align: center;
-                    margin-right: 10% !important;
-                    margin-top: 50% !important;
-                    width: 70% !important;
-                    height: 300px !important;
+                    margin-top: 20% !important;
+                    margin-left: -5% !important;
+                    width:350px !important;
+                    height: 70% !important;
                 }
             }
         }
-
             .unidad{
                 display: grid;
                 grid-template-columns: 100% !important;
                 grid-template-rows: 5% 70% !important;
                 .promocionProduc{
-                    height: 90px;
-                    p{font-size: 15px !important;}
+                    // margin-top: 0%;
+                    p{
+                        margin-top: 10%;
+                        font-size: 10px !important;}
                 }
             }
             .row{
@@ -574,6 +626,10 @@ $font-titulo:Georgia, 'Times New Roman', Times, serif;;
                 .cable{
                     width: 30% !important;
                 }
+                
+            }
+            .comparacion{
+                height: 70% !important;
             }
             .seleccion{
                 img{
